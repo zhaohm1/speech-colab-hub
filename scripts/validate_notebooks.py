@@ -41,4 +41,4 @@ for model in registry['models']:
     print(f'OK {relative}: nbformat, code syntax, no outputs, README links')
 for path in (ROOT / 'notebooks').rglob('*.ipynb'):
     assert str(path.relative_to(ROOT)) in paths, f'unregistered notebook: {path}'
-print('Static validation passed; GPU inference remains unverified unless a real log is recorded.')
+print('Static validation passed; registered verification logs exist, but their contents require human review.')

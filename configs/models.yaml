@@ -14,5 +14,5 @@ models:
     model_name: small
     model_revision: small（openai-whisper 20250625 发布版本；权重 SHA-256 由官方下载校验）
     requires_gpu: true
-    status: unverified
-    verification_log: null
+    status: verified
+    verification_log: validation/whisper_colab_t4_20261114.md
