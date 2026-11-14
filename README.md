@@ -14,7 +14,9 @@ TTS 模板已准备，首阶段尚无注册模型或可运行 Notebook。
 
 ## 私有仓库如何在 Colab 打开
 
-直接点 Open in Colab 若出现 GitHub API `404`，先在 [Colab 的 GitHub 打开页面](https://colab.research.google.com/github/) 勾选 **Include private repos**，按提示用有本仓库权限的 GitHub 账号授权 Colab，然后选择 `zhaohm1/speech-colab-hub` 的 `main` 分支和 `notebooks/asr/whisper.ipynb`。这一步只需由使用者在自己的账号中完成，不要把访问令牌写进 Notebook。授权后可再试 README 的按钮。若暂时不愿授权，可从 GitHub 下载该 `.ipynb`，在 Colab 选择 **File → Upload notebook**；此方式打开的是上传副本。
+**私有仓库推荐入口：**用有仓库权限的 GitHub 账号下载 [`notebooks/asr/whisper.ipynb`](notebooks/asr/whisper.ipynb)，在 Colab 选择 **File → Upload notebook** 打开副本。无需向 Colab 授予整个私有仓库的访问权限。
+
+如需直接使用 Open in Colab 按钮，先在 [Colab 的 GitHub 打开页面](https://colab.research.google.com/github/) 勾选 **Include private repos**，按提示授权 GitHub。若仍看不到仓库或遇到 GitHub API `404`，核对授权时登录的 GitHub 账号及授权范围；不要反复重试按钮，改用上述上传方式。不要把访问令牌写进 Notebook。
 
 ## 使用与证据
 
