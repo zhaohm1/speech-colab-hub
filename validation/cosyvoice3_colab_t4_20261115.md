@@ -9,4 +9,6 @@
 - 单次调用耗时 10.251 秒，RTF 3.769；CUDA peak allocated 1708.2 MiB、peak reserved 2424.0 MiB。计时包含 `inference_instruct2` 与输出拼接，排除安装、下载、加载与 WAV 写入；无预热、仅一次输入，因此不代表稳定性能。
 - 本地原始证据：`/home/zhaohm/deploy/experiments/exp001_cosyvoice3_tts/results/cosyvoice3_colab_t4_20261115_executed.ipynb`（SHA-256 `2848be2495f59f9573304685d38b4ee6ae378c54ea79dddc5b97bdb4f212790d`）及同目录 `cosyvoice3_colab_t4_20261115.wav`。带输出的 Notebook 保存在本地实验目录；公开仓库的 Notebook 不包含执行输出。
 
+将修正提交到 GitHub 后，重新打开公开 Notebook，从重启后的干净内核执行 `Restart session and run all`；六个代码单元依次完成，依赖安装返回 0、模型文件复用并通过六项哈希校验、半精度加载成功、合成单元显示音频播放器。此次调用耗时 9.296 秒、RTF 3.418、CUDA peak allocated 1708.2 MiB、peak reserved 2424.0 MiB，输出仍为同一 2.72 秒 WAV 和同一 SHA-256。完整重跑的原始 Notebook 位于 `/home/zhaohm/deploy/experiments/exp001_cosyvoice3_tts/results/cosyvoice3_colab_t4_20261115_clean_executed.ipynb`，SHA-256 `752d848b33d202b725c9f05b992b7b1b368d14ecdd72bc7e893c815271a7b8e7`。本次复用了同一 Colab 临时磁盘中的已下载模型与已安装依赖；没有重新进行首次下载。
+
 运行中保留的失败与限制：首次 `Run all` 时缺少 `lightning`，补齐后又缺少 `pyworld`；以默认 float32 构建模型时耗尽 12.67 GiB RAM，Colab 自动重启。尝试启用磁盘 swap 时 `swapon` 返回 255，交换文件已从临时运行时删除。随后在模型构建期间设置默认 dtype 为 float16，并调用官方 `AutoModel(..., fp16=True)`，加载及合成成功。下载 `llm.pt` 时曾有一次 `ConnectionError`，ModelScope 自动续传完成。上述过程不证明其他 Colab 配置或不同版本的适配，也不构成音质评测。
