@@ -12,7 +12,7 @@
 
 | 模型 | 功能 | 运行环境 | 来源 | 验证状态 | Notebook | Colab |
 | --- | --- | --- | --- | --- | --- | --- |
-| CosyVoice3 0.5B | 输入文本、合成并试听 WAV | Colab GPU；模型约 9.8 GB，建议至少 18 GiB 空闲磁盘 | [官方代码](https://github.com/FunAudioLLM/CosyVoice)、[模型页](https://www.modelscope.cn/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512)；Apache-2.0（模型卡标注） | `unverified`：尚无 Colab GPU 运行日志 | [查看 Notebook](notebooks/tts/cosyvoice3.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zhaohm1/speech-colab-hub/blob/main/notebooks/tts/cosyvoice3.ipynb) |
+| CosyVoice3 0.5B | 输入文本、合成并试听 WAV；复用 Colab PyTorch/CUDA | Colab GPU；模型约 9.8 GB，建议至少 18 GiB 空闲磁盘 | [官方代码](https://github.com/FunAudioLLM/CosyVoice)、[模型页](https://www.modelscope.cn/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512)；Apache-2.0（模型卡标注） | `unverified`：尚无 Colab GPU 运行日志 | [查看 Notebook](notebooks/tts/cosyvoice3.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zhaohm1/speech-colab-hub/blob/main/notebooks/tts/cosyvoice3.ipynb) |
 
 ## 在 Colab 打开
 

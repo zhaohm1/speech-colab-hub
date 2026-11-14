@@ -2,7 +2,7 @@
 
 ## 研究问题与边界
 
-目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。首阶段实现 Whisper ASR，后续接入 CosyVoice3 TTS。CosyVoice3 仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率或稳定性能。
+目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。首阶段实现 Whisper ASR，后续接入 CosyVoice3 TTS。CosyVoice3 复用 Colab 自带 PyTorch/CUDA，仅安装缺少的非 vLLM 推理依赖；目前仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率或稳定性能。
 
 ## 参考仓库
 
