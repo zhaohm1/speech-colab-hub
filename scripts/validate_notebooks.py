@@ -32,7 +32,15 @@ for model in registry['models']:
             continue
         assert cell.execution_count is None and not cell.outputs, f'{path}: saved execution at {i}'
         source = '\n'.join(line for line in cell.source.splitlines() if not line.lstrip().startswith(('%','!')))
-        ast.parse(source, filename=f'{path}:{i}')
+        parsed = ast.parse(source, filename=f'{path}:{i}')
+        for node in ast.walk(parsed):
+            if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+                    and node.func.attr == 'write_text' and node.args
+                    and isinstance(node.args[0], ast.Constant)
+                    and isinstance(node.args[0].value, str)
+                    and isinstance(node.func.value, ast.Name)
+                    and node.func.value.id.endswith('_script')):
+                ast.parse(node.args[0].value, filename=f'{path}:{i}:embedded')
         assert not re.search(r'(hf_[A-Za-z0-9]{20,}|HUGGING_FACE_HUB_TOKEN\s*=\s*[\'\"][^\'\"]+)', cell.source)
     relative = model['notebook']
     assert f']({relative})' in readme, f'README missing notebook link: {relative}'

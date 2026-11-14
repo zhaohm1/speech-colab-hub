@@ -10,13 +10,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def render(model):
-    path = ROOT / 'templates' / f"{model['task']}.ipynb"
+    path = ROOT / 'templates' / f"{model.get('template', model['task'])}.ipynb"
     notebook = json.loads(path.read_text(encoding='utf-8'))
     values = {key: str(value) for key, value in model.items()}
     values['model_name_repr'] = repr(model.get('model_name', ''))
     for index, cell in enumerate(notebook['cells']):
         cell['id'] = f"{model['id']}-{index:02d}"
-        cell['source'] = ''.join(cell['source']).format_map(values).splitlines(keepends=True)
+        source = ''.join(cell['source'])
+        if model.get('template') == 'cosyvoice3':
+            for key in ('title', 'status', 'source_url', 'model_url', 'license'):
+                source = source.replace('{' + key + '}', values[key])
+        else:
+            source = source.format_map(values)
+        cell['source'] = source.splitlines(keepends=True)
         if cell['cell_type'] == 'code':
             cell['execution_count'] = None
             cell['outputs'] = []

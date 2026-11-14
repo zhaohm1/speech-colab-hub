@@ -2,7 +2,7 @@
 
 ## 研究问题与边界
 
-目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。首阶段只实现 Whisper ASR；TTS 提供模板，不声称已有模型通过推理。单样本输出与耗时不代表准确率或稳定性能。
+目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。首阶段实现 Whisper ASR，后续接入 CosyVoice3 TTS。CosyVoice3 仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率或稳定性能。
 
 ## 参考仓库
 
@@ -28,7 +28,9 @@ speech-colab-hub/
 ├── configs/models.yaml
 ├── templates/asr.ipynb
 ├── templates/tts.ipynb
+├── templates/cosyvoice3.ipynb
 ├── notebooks/asr/whisper.ipynb
+├── notebooks/tts/cosyvoice3.ipynb
 ├── scripts/generate_notebooks.py
 ├── scripts/validate_notebooks.py
 └── validation/README.md

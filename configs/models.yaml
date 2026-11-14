@@ -16,3 +16,19 @@ models:
     requires_gpu: true
     status: verified
     verification_log: validation/whisper_colab_t4_20261114.md
+  - id: cosyvoice3
+    task: tts
+    template: cosyvoice3
+    title: CosyVoice3 TTS
+    description: 输入文本并使用官方 instruct2 接口合成、试听和下载 WAV。
+    notebook: notebooks/tts/cosyvoice3.ipynb
+    runtime: Colab GPU（建议至少 18 GiB 可用磁盘；模型约 9.8 GB）
+    source_url: https://github.com/FunAudioLLM/CosyVoice
+    model_url: https://www.modelscope.cn/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512
+    license: Apache-2.0（模型卡标注）
+    package: CosyVoice 源码 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+    model_name: FunAudioLLM/Fun-CosyVoice3-0.5B-2512
+    model_revision: 3a9eb0e104c9ce5bb7ef0af4ac86d9b79abc4029
+    requires_gpu: true
+    status: unverified
+    verification_log: null
