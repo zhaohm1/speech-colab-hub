@@ -30,5 +30,5 @@ models:
     model_name: FunAudioLLM/Fun-CosyVoice3-0.5B-2512
     model_revision: 3a9eb0e104c9ce5bb7ef0af4ac86d9b79abc4029
     requires_gpu: true
-    status: unverified
-    verification_log: null
+    status: verified
+    verification_log: validation/cosyvoice3_colab_t4_20261115.md
