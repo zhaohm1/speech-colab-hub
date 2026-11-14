@@ -31,6 +31,8 @@ for model in registry['models']:
         if cell.cell_type != 'code':
             continue
         assert cell.execution_count is None and not cell.outputs, f'{path}: saved execution at {i}'
+        if model['id'] == 'cosyvoice3':
+            assert 'write_text(' not in cell.source and 'synthesize.py' not in cell.source, f'{path}: helper script at {i}'
         source = '\n'.join(line for line in cell.source.splitlines() if not line.lstrip().startswith(('%','!')))
         parsed = ast.parse(source, filename=f'{path}:{i}')
         for node in ast.walk(parsed):
