@@ -1,0 +1,18 @@
+schema_version: 1
+repository: zhaohm1/speech-colab-hub
+models:
+  - id: whisper
+    task: asr
+    title: Whisper ASR
+    description: 上传音频并使用 Whisper 完成语音转写。
+    notebook: notebooks/asr/whisper.ipynb
+    runtime: Colab GPU（推荐 T4）
+    source_url: https://github.com/openai/whisper
+    model_url: https://github.com/openai/whisper#available-models-and-languages
+    license: MIT
+    package: openai-whisper==20250625
+    model_name: small
+    model_revision: small（openai-whisper 20250625 发布版本；权重 SHA-256 由官方下载校验）
+    requires_gpu: true
+    status: unverified
+    verification_log: null
