@@ -2,7 +2,7 @@
 
 ## 研究问题与边界
 
-目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。已接入 Whisper ASR 与 CosyVoice3 TTS，并有各自的 Colab T4 单样本记录。Confucius4-R2T2 使用官方 vLLM 接口模拟文件分块流式输入，目前仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率、真实实时链路或稳定性能。
+目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。Whisper ASR 与 CosyVoice3 TTS 有各自的 Colab T4 单样本记录。Confucius4-R2T2、Qwen3-TTS VoiceDesign、VoxCPM2 和 IndexTTS-2.5 目前仅完成静态检查。IndexTTS-2.5 的官方 Python 版本要求为 3.10–3.11，需连接兼容的 GPU 本地运行时。单样本输出与耗时不代表准确率、情绪标签可靠性或稳定性能。
 
 ## 参考仓库
 
@@ -30,9 +30,15 @@ speech-colab-hub/
 ├── templates/tts.ipynb
 ├── templates/cosyvoice3.ipynb
 ├── templates/confucius4_r2t2.ipynb
+├── templates/qwen3_tts.ipynb
+├── templates/voxcpm2.ipynb
+├── templates/indextts2_5.ipynb
 ├── notebooks/asr/whisper.ipynb
 ├── notebooks/asr/confucius4_r2t2.ipynb
 ├── notebooks/tts/cosyvoice3.ipynb
+├── notebooks/tts/qwen3_tts_voice_design.ipynb
+├── notebooks/tts/voxcpm2.ipynb
+├── notebooks/tts/indextts2_5.ipynb
 ├── scripts/generate_notebooks.py
 ├── scripts/validate_notebooks.py
 └── validation/README.md

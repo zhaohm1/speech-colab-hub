@@ -17,11 +17,8 @@ def render(model):
     for index, cell in enumerate(notebook['cells']):
         cell['id'] = f"{model['id']}-{index:02d}"
         source = ''.join(cell['source'])
-        if model.get('template') == 'cosyvoice3':
-            for key in ('title', 'status', 'source_url', 'model_url', 'license'):
-                source = source.replace('{' + key + '}', values[key])
-        else:
-            source = source.format_map(values)
+        for key, value in values.items():
+            source = source.replace('{' + key + '}', value)
         cell['source'] = source.splitlines(keepends=True)
         if cell['cell_type'] == 'code':
             cell['execution_count'] = None

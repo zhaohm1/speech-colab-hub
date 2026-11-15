@@ -48,3 +48,51 @@ models:
     requires_gpu: true
     status: unverified
     verification_log: null
+  - id: qwen3_tts_voice_design
+    task: tts
+    template: qwen3_tts
+    title: Qwen3-TTS VoiceDesign
+    description: 用自然语言描述音色与表达，合成、试听并下载单句 WAV。
+    notebook: notebooks/tts/qwen3_tts_voice_design.ipynb
+    runtime: Colab GPU（建议至少 12 GiB 空闲磁盘）
+    source_url: https://github.com/QwenLM/Qwen3-TTS
+    model_url: https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+    license: Apache-2.0（官方模型卡与代码仓库）
+    package: Qwen3-TTS 源码 022e286b98fbec7e1e916cb940cdf532cd9f488e
+    model_name: Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+    model_revision: 5ecdb67327fd37bb2e042aab12ff7391903235d3
+    requires_gpu: true
+    status: unverified
+    verification_log: null
+  - id: voxcpm2
+    task: tts
+    template: voxcpm2
+    title: VoxCPM2 Voice Design
+    description: 用括号内音色描述合成、试听并下载单句 WAV。
+    notebook: notebooks/tts/voxcpm2.ipynb
+    runtime: Colab GPU（建议至少 12 GiB 空闲磁盘）
+    source_url: https://github.com/OpenBMB/VoxCPM
+    model_url: https://huggingface.co/openbmb/VoxCPM2
+    license: Apache-2.0（官方模型卡与代码仓库）
+    package: VoxCPM 源码 300e4260b509066151d623dc9c0aa922cf82232b
+    model_name: openbmb/VoxCPM2
+    model_revision: 7936080b41163874f38610f46f438e2c0757f9fd
+    requires_gpu: true
+    status: unverified
+    verification_log: null
+  - id: indextts2_5
+    task: tts
+    template: indextts2_5
+    title: IndexTTS-2.5 Emotion Control
+    description: 上传参考音色，用 8 维情绪向量控制单句合成。
+    notebook: notebooks/tts/indextts2_5.ipynb
+    runtime: Colab 连接 Python 3.10–3.11 GPU 本地运行时（默认托管运行时不兼容）
+    source_url: https://github.com/index-tts/index-tts
+    model_url: https://huggingface.co/IndexTeam/IndexTTS-2.5
+    license: bilibili Model Use License Agreement（官方仓库及权重）
+    package: index-tts 源码 d9e41aac89fd00b3d71497fddb287b7f24613712
+    model_name: IndexTeam/IndexTTS-2.5
+    model_revision: c39ce5ba981572cb187443877ff559dfb246ce63
+    requires_gpu: true
+    status: unverified
+    verification_log: null
