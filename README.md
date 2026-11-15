@@ -7,6 +7,7 @@
 | 模型 | 功能 | 运行环境 | 来源 | 验证状态 | Notebook | Colab |
 | --- | --- | --- | --- | --- | --- | --- |
 | Whisper small | 上传音频并转写 | Colab GPU，推荐 T4 | [官方代码](https://github.com/openai/whisper)、[模型说明](https://github.com/openai/whisper#available-models-and-languages)；MIT | `verified`：T4 单样本推理，见[验证记录](validation/whisper_colab_t4_20261114.md) | [查看 Notebook](notebooks/asr/whisper.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zhaohm1/speech-colab-hub/blob/main/notebooks/asr/whisper.ipynb) |
+| Confucius4-R2T2 | 上传音频，按 160 ms 分块查看稳定前缀和最终转写 | Colab GPU，vLLM；建议至少 12 GiB 空闲磁盘 | [官方代码](https://github.com/netease-youdao/Confucius4-R2T2)、[模型权重](https://huggingface.co/netease-youdao/Confucius4-R2T2)；代码 Apache-2.0，[权重另有许可](https://github.com/netease-youdao/Confucius4-R2T2/blob/master/MODEL_LICENSE) | `unverified`：尚无 Colab GPU 实测 | [查看 Notebook](notebooks/asr/confucius4_r2t2.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zhaohm1/speech-colab-hub/blob/main/notebooks/asr/confucius4_r2t2.ipynb) |
 
 ## TTS
 

@@ -2,7 +2,7 @@
 
 ## 研究问题与边界
 
-目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。首阶段实现 Whisper ASR，后续接入 CosyVoice3 TTS。CosyVoice3 复用 Colab 自带 PyTorch/CUDA，仅安装缺少的非 vLLM 推理依赖；目前仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率或稳定性能。
+目标是让研究人员用少量步骤在 Colab 上完成开源 ASR/TTS 模型的单样本推理，并留存可追溯的运行条件。已接入 Whisper ASR 与 CosyVoice3 TTS，并有各自的 Colab T4 单样本记录。Confucius4-R2T2 使用官方 vLLM 接口模拟文件分块流式输入，目前仅完成静态检查，尚无 Colab GPU 实测。单样本输出与耗时不代表准确率、真实实时链路或稳定性能。
 
 ## 参考仓库
 
@@ -29,7 +29,9 @@ speech-colab-hub/
 ├── templates/asr.ipynb
 ├── templates/tts.ipynb
 ├── templates/cosyvoice3.ipynb
+├── templates/confucius4_r2t2.ipynb
 ├── notebooks/asr/whisper.ipynb
+├── notebooks/asr/confucius4_r2t2.ipynb
 ├── notebooks/tts/cosyvoice3.ipynb
 ├── scripts/generate_notebooks.py
 ├── scripts/validate_notebooks.py

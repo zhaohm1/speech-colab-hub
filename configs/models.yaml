@@ -32,3 +32,19 @@ models:
     requires_gpu: true
     status: verified
     verification_log: validation/cosyvoice3_colab_t4_20261115.md
+  - id: confucius4_r2t2
+    task: asr
+    template: confucius4_r2t2
+    title: Confucius4-R2T2 流式 ASR
+    description: 上传音频，按 160 ms 分块模拟流式输入，查看稳定前缀与最终转写。
+    notebook: notebooks/asr/confucius4_r2t2.ipynb
+    runtime: Colab GPU（vLLM；建议至少 12 GiB 空闲磁盘）
+    source_url: https://github.com/netease-youdao/Confucius4-R2T2
+    model_url: https://huggingface.co/netease-youdao/Confucius4-R2T2
+    license: 代码 Apache-2.0；权重 NetEase Model Use License Agreement
+    package: Confucius4-R2T2 源码 72b81be7070095410b75ed2e11998e347f655218
+    model_name: netease-youdao/Confucius4-R2T2
+    model_revision: d07b4a593610c16074cfc941fba052a7a12eeda3
+    requires_gpu: true
+    status: unverified
+    verification_log: null
